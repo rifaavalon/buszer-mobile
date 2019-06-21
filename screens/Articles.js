@@ -139,46 +139,7 @@ class Articles extends React.Component {
     );
   };
 
-  renderAlbum = () => {
-    const { navigation } = this.props;
 
-    return (
-      <Block
-        flex
-        style={[styles.group, { paddingBottom: theme.SIZES.BASE * 5 }]}
-      >
-        <Text bold size={16} style={styles.title}>
-          Album
-        </Text>
-        <Block style={{ marginHorizontal: theme.SIZES.BASE * 2 }}>
-          <Block flex right>
-            <Text
-              size={12}
-              color={theme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate("Home")}
-            >
-              View All
-            </Text>
-          </Block>
-          <Block
-            row
-            space="between"
-            style={{ marginTop: theme.SIZES.BASE, flexWrap: "wrap" }}
-          >
-            {Images.Viewed.map((img, index) => (
-              <Block key={`viewed-${img}`} style={styles.shadow}>
-                <Image
-                  resizeMode="cover"
-                  source={{ uri: img }}
-                  style={styles.albumThumb}
-                />
-              </Block>
-            ))}
-          </Block>
-        </Block>
-      </Block>
-    );
-  };
 
   render() {
     return (
@@ -187,7 +148,7 @@ class Articles extends React.Component {
           showsVerticalScrollIndicator={false}
         >
           {this.renderCards()}
-          {this.renderAlbum()}
+
         </ScrollView>
       </Block>
     );
